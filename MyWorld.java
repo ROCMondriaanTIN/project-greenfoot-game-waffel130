@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  *
- * @author R. Springer
+ * @author N. Kuijper
  */
 public class MyWorld extends World {
 

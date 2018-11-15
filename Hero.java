@@ -3,7 +3,7 @@ import greenfoot.*;
 
 /**
  *
- * @author R. Springer
+ * @author N. Kuijper
  */
 public class Hero extends Mover {
 
@@ -39,13 +39,13 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")) {
-            velocityY = -20;
+        if (Greenfoot.isKeyDown("space")) {
+            velocityY = -10;
         }
 
-        if (Greenfoot.isKeyDown("a")) {
+        if (Greenfoot.isKeyDown("left")) {
             velocityX = -2;
-        } else if (Greenfoot.isKeyDown("d")) {
+        } else if (Greenfoot.isKeyDown("right")) {
             velocityX = 2;
         }
     }

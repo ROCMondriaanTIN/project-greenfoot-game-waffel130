@@ -3,7 +3,7 @@ import greenfoot.*;
 
 /**
  *
- * @author R. Springer
+ * @author N. Kuijper
  */
 public class Enemy extends Mover {
 
@@ -29,8 +29,8 @@ public class Enemy extends Mover {
 
         if (firstAct) {
             firstAct = false;
-            xMin = x - walkRange / 2;
-            xMax = x + walkRange / 2;
+            xMin = x - walkRange / 20;
+            xMax = x + walkRange / 20;
         }
 
         velocityX = speed;

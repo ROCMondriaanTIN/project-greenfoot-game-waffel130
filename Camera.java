@@ -3,7 +3,7 @@ import greenfoot.*;
 
 /**
  *
- * @author R. Springer
+ * @author N. Kuijper
  */
 public class Camera extends Actor {
 
