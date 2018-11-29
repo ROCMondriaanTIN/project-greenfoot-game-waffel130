@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 
 /**
@@ -7,20 +6,38 @@ import greenfoot.*;
  */
 public class Hero extends Mover {
     private int frame = 1;
+    public int leven=3;
+    boolean keyBlue=false;
+    boolean DeurOpSlot=false;
     private final double gravity;
     private final double acc;
     private final double drag;
     private int animatieTimer = 0;
+    boolean isDood=false;
     
    
     
 
-    public Hero() {
+    public Hero() 
+    {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setImage("p1_walk00.png");
+    }
+    public void checkObstacle()
+    {
+        Actor wall = getOneIntersectingObject(DeurOpSlot.class);
+        if(wall != null)
+        {
+            move (-4);
+        }   
+    }
+    public boolean onGround1()
+    {
+     Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2 + 2, DeurOpSlot.class);
+       return under != null;
     }
     public boolean onGround()
     {
@@ -28,6 +45,19 @@ public class Hero extends Mover {
         Tile tile = (Tile) under;
         return tile != null && tile.isSolid == true;
     }
+    public boolean touchingdDeurOpSlot()
+    {
+        if(keyBlue==true)
+        {
+            if(isTouching(DeurOpSlot.class)) 
+            {
+                removeTouching(DeurOpSlot.class);
+                 DeurOpSlot=true;
+            }
+            
+        }
+        return DeurOpSlot;
+    }    
     public void animatieRight()
     {
         if(frame == 1)
@@ -146,16 +176,25 @@ public class Hero extends Mover {
     }
 
     @Override
-    public void act() {
+    public void act() 
+    {
+       if(isDood)    
+            {isDood=false;
+            leven--;
+            
+       }
         handleInput();
         
+        checkObstacle();
+        touchingdDeurOpSlot();
         getCoin();
-        
+       // onGround1();
         velocityX *= drag;
         velocityY += acc;
-        if (velocityY > gravity) {
+        if (velocityY > gravity) 
+           {
             velocityY = gravity;
-        }
+       }
         applyVelocity();
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {

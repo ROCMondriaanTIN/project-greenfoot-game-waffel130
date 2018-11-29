@@ -9,13 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Startscherm extends World
 {
-    public void act()
-    {
-        if (Greenfoot.isKeyDown("enter"))
-        Greenfoot.setWorld(new LvlSelecter());
-        }
-    
-
     /**
      * Constructor for objects of class Startscherm.
      * 
