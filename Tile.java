@@ -17,7 +17,11 @@ public class Tile extends BasicTile {
     public Tile(String image, int width, int heigth) {
         super(image, width, heigth);
     }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 4372fff5ea53a9c16ee13c8083969eac7aeee2f9
     /**
      * Constructor of the tile. Creates a tile based on image, width, height and
      * a tile type

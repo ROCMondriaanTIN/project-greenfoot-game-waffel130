@@ -15,4 +15,7 @@ public enum TileType {
     BOX,
     // Add your own tile types here
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4372fff5ea53a9c16ee13c8083969eac7aeee2f9

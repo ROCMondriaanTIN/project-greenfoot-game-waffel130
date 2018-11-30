@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> 4372fff5ea53a9c16ee13c8083969eac7aeee2f9
 import greenfoot.*;
 
 /**
@@ -88,18 +85,6 @@ public class BasicTile extends Actor {
         return colom;
     }
 
-<<<<<<< HEAD
-     public void setColom(int colom) {
-        this.colom = colom;
-    }
-
-     public int getRow() {
-        return row;
-    }
-
-     public void setRow(int row) {
-         this.row = row;
-=======
     public void setColom(int colom) {
         this.colom = colom;
     }
@@ -110,6 +95,5 @@ public class BasicTile extends Actor {
 
     public void setRow(int row) {
         this.row = row;
->>>>>>> 4372fff5ea53a9c16ee13c8083969eac7aeee2f9
     }
 }
