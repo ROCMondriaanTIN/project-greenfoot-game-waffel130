@@ -16,11 +16,23 @@ public class Startscherm extends World
     public Startscherm()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1620, 880, 1, false);
+        super(1280, 720, 1, false);
         prepare();
         
     }
+    
     private void prepare ()
     {
+        One one = new One();
+        addObject(one,189,164);
     }
+    
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("1"))
+        {
+            Greenfoot.setWorld(new Level1());
+        }
+    }
+
 }
