@@ -203,6 +203,13 @@ public class Hero extends Mover {
                 break;
             }
         }
+        for (Actor liquidWater : getIntersectingObjects(TileExtended.class)) {
+            TileExtended tile = (TileExtended) liquidWater;
+            if (tile != null && tile.type == "water") {
+                Greenfoot.setWorld(new Level1());
+                break;
+            }
+        }
     }
     int coin;
     public int getCoin()
@@ -249,4 +256,5 @@ public class Hero extends Mover {
     public int getHeight() {
         return getImage().getHeight();
     }
+
 }

@@ -375,28 +375,29 @@ tile = new Tile("ladder_top.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT)
 tile.isSolid = true;
 break;
 case 90:
-tile = new Tile("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile = new TileExtended("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, "water");
+tile.isSolid = false;
 break;
 case 91:
-tile = new Tile("liquidLavaTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile = new TileExtended("liquidLavaTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT,  "water");
+tile.isSolid = false;
 break;
 case 92:
-tile = new Tile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile = new TileExtended("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT,  "water");
+tile.isSolid = false;
 break;
 case 93:
-tile = new Tile("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+ tile = new TileExtended("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, "water");
+tile.isSolid = false;
 break;
+
 case 94:
-tile = new Tile("liquidWaterTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile = new TileExtended("liquidWaterTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, "water");
+tile.isSolid = false;
 break;
 case 95:
-tile = new Tile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile = new TileExtended("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, "water");
+tile.isSolid = false;
 break;
 case 96:
 tile = new Tile("lock_blue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -520,15 +521,15 @@ tile.isSolid = true;
 break;
 case 126:
 tile = new Tile("signExit.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 127:
 tile = new Tile("signLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 128:
 tile = new Tile("signRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 129:
 tile = new Tile("snow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -536,7 +537,7 @@ tile.isSolid = true;
 break;
 case 130:
 tile = new Tile("snowCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 131:
 tile = new Tile("snowCenter_rounded.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -576,19 +577,19 @@ tile.isSolid = true;
 break;
 case 140:
 tile = new Tile("snowHillLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 141:
 tile = new Tile("snowHillLeft2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 142:
 tile = new Tile("snowHillRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 143:
 tile = new Tile("snowHillRight2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-tile.isSolid = true;
+tile.isSolid = false;
 break;
 case 144:
 tile = new Tile("snowLedgeLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
