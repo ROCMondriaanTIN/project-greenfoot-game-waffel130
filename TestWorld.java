@@ -54,6 +54,8 @@ public class TestWorld extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 300, 200);
+        Boef boef = new Boef();
+        addObject(boef,300, 200);
         addObject(new Enemy(), 1170, 410);
         addObject(new Coin(), 800, 400); 
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -61,6 +63,7 @@ public class TestWorld extends World {
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+        ce.addCollidingMover(boef);
         prepare();
     }
 

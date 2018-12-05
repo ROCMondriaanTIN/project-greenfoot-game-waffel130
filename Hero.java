@@ -15,7 +15,7 @@ public class Hero extends Mover {
     private int animatieTimer = 0;
     boolean isDood=false;
     
-   
+  
     
 
     public Hero() 
