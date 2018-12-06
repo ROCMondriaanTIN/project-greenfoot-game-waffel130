@@ -48,7 +48,7 @@ public class Mover extends Actor {
         if (Math.abs(velocityY) < 0.01) {
             velocityY = 0;
         }
-        setLocation((int) (getX() + .5 + velocityX), (int) (getY() + .5 + velocityY));
+        setLocation((int) (getX() + .5 + velocityX), (int) (getY() + velocityY));
     }
 
     @Override
@@ -60,6 +60,16 @@ public class Mover extends Actor {
         }
         super.setLocation(screenX, screenY);
         this.worldX = x;
+        this.worldY = y;
+    }
+    
+    public void setX(int x) {
+        super.setLocation(screenX, screenY);
+        this.worldX = x;
+    }
+    
+    public void setY(int y) {
+        super.setLocation(screenX, screenY);
         this.worldY = y;
     }
 

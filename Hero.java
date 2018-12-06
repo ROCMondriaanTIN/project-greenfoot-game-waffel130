@@ -183,8 +183,10 @@ public class Hero extends Mover {
             leven--;
             
        }
+       if(CollisionEngine.DEBUG == false) {
+           
         handleInput();
-        
+    }
         checkObstacle();
         touchingdDeurOpSlot();
         getCoin();

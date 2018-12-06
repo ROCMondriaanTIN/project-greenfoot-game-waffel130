@@ -7,25 +7,25 @@ import java.util.List;
  *
  * @author N. Kuijper
  */
-public class CollisionEngine {
+public class CollisionEngineBoef {
 
     public static final boolean DEBUG = false;
-    private final Camera camera;
+    //private final Camera camera;
     private final TileEngine tileEngine;
     private final List<Mover> collidingActors;
     private final List<Tile> collidingTiles;
 
     /**
-     * The constructor of the CollisionEngine.
+     * The constructor of the CollisionEngineBoef.
      *
      * @param tileEngine The TileEngine
      * @param camera The camera
      */
-    public CollisionEngine(TileEngine tileEngine, Camera camera) {
+    public CollisionEngineBoef(TileEngine tileEngine ) {
         this.tileEngine = tileEngine;
         collidingActors = new ArrayList<>();
         collidingTiles = new ArrayList<>(6);
-        this.camera = camera;
+        //this.camera = camera;
     }
 
     /**
@@ -191,10 +191,10 @@ public class CollisionEngine {
         int bottom = getActorBottom(mover);
         int x = mover.getX();
         int y = mover.getY();
-        int topTile = CollisionEngine.getActorTop(tile) + camera.getY();
-        int bottomTile = CollisionEngine.getActorBottom(tile) + camera.getY();
-        int leftTile = CollisionEngine.getActorLeft(tile) + camera.getX();
-        int rightTile = CollisionEngine.getActorRight(tile) + camera.getX();
+        int topTile = CollisionEngineBoef.getActorTop(tile);//+ camera.getY();
+        int bottomTile = CollisionEngineBoef.getActorBottom(tile);//+ camera.getY();
+        int leftTile = CollisionEngineBoef.getActorLeft(tile); //+ camera.getX();
+        int rightTile = CollisionEngineBoef.getActorRight(tile); //+ camera.getX();
 
         double overlapX = 0;
         double overlapY = 0;
@@ -216,8 +216,8 @@ public class CollisionEngine {
         }
 
         if (DEBUG) {
-            //System.out.println("Player:\n" + mover);
-            //System.out.println("Tile:\n" + tile);
+            System.out.println("Player:\n" + mover);
+            System.out.println("Tile:\n" + tile);
         }
 
         if (Math.abs(overlapX) > 0 && Math.abs(overlapY) > 0) {

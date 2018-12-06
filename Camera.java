@@ -173,18 +173,21 @@ public class Camera extends Actor {
                 currentTile.setLocation(xPos, yPos);
             }
         }
-
-        if (!this.follow) {
-            this.followActor.screenX = this.followActor.getX() - this.getX();
-            this.followActor.screenY = this.followActor.getY() - this.getY();
-        }
-
         for (Mover actor : this.getWorld().getObjects(Mover.class)) {
             if (actor == this.followActor) {
                 continue;
             }
             actor.screenX = actor.getX() - this.getX();
             actor.screenY = actor.getY() - this.getY();
+            actor.setX(actor.getX());
+            actor.setY(actor.getY());
         }
+
+        if (!this.follow) {
+            this.followActor.screenX = this.followActor.getX() - this.getX();
+            this.followActor.screenY = this.followActor.getY() - this.getY();
+        }
+
+        
     }
 }
