@@ -10,7 +10,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends World {
 
     private CollisionEngine ce;
-    private CollisionEngineBoef ceBoef;
 
     /**
      * Constructor for objects of class Level1.
@@ -78,11 +77,9 @@ public class Level1 extends World {
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
-        //ceBoef = new CollisionEngineBoef(te);
 
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
-        //ceBoef.addCollidingMover(boef);
         ce.addCollidingMover(boef);
         prepare();
     }

@@ -51,14 +51,15 @@ public class Level2 extends World {
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero();
+        Boef boef = new Boef();
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
-
+        //camera.follow(boef);
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero,100, 630);
-        addObject(new Boef() ,100, 630);
+        addObject(hero,100, 910);
+        addObject(new Boef() ,190, 930);
        /* addObject(new Enemy(), 330, 290);
         addObject(new Enemy(), 510, 290);
         addObject(new Enemy(), 690, 290);
@@ -81,8 +82,10 @@ public class Level2 extends World {
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
+
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+        ce.addCollidingMover(boef);
         prepare();
     }
 

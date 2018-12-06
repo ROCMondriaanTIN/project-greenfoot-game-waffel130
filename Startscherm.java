@@ -25,6 +25,10 @@ public class Startscherm extends World
     {
         One one = new One();
         addObject(one,189,164);
+        two two = new two();
+        addObject(two,616,167);
+        three three = new three();
+        addObject(three,1075,172);
     }
     
     public void act()
@@ -32,6 +36,14 @@ public class Startscherm extends World
         if(Greenfoot.isKeyDown("1"))
         {
             Greenfoot.setWorld(new Level1());
+        }
+        if(Greenfoot.isKeyDown("2"))
+        {
+            Greenfoot.setWorld(new Level2());
+        }
+        if(Greenfoot.isKeyDown("3"))
+        {
+            Greenfoot.setWorld(new Level3());
         }
     }
 

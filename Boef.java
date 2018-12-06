@@ -8,10 +8,14 @@ import greenfoot.*;
 public class Boef extends Mover {
 
     private final double gravity;
+   // public int MAX_IMAGES = 1;
+   // public int MAX_ANIMATION_SPEED = 2;
     private final double acc;
     private final double drag;
     
     boolean jump = true;
+   // private int frame = 0;
+   // private int animationSpeed = 0;
 
     public Boef() {
         super();
@@ -24,6 +28,9 @@ public class Boef extends Mover {
     @Override
     public void act() {
         handleInput();
+       // animationSpeed++;
+      //  Animator();
+      //  applyVelocity();
         
         velocityX *= drag;
         velocityY += acc;
@@ -35,16 +42,6 @@ public class Boef extends Mover {
     
     public void handleInput() 
     {
-        // if (Greenfoot.isKeyDown("w")) {
-            // velocityY = -13;
-        // }
-
-        // if (Greenfoot.isKeyDown("a")) {
-            // velocityX = -5;
-        // } else if (Greenfoot.isKeyDown("d")) {
-            // velocityX = 5;
-        // }
-        
         velocityX = 5;
         if(onGround() == false && jump == false){
             velocityY = -10;
@@ -53,6 +50,18 @@ public class Boef extends Mover {
             jump = false;
         }
     }
+    //private void Animator () {
+    //    setImage("spider_"+frame+".png");
+     // /  
+      //  if (animationSpeed > MAX_ANIMATION_SPEED) {
+       //     animationSpeed = 0;
+       //     
+        //    frame++;
+        //    if (frame > MAX_IMAGES) {
+        //        frame = 0;
+        //    }
+       // }
+   // }
     
     public boolean onGround()
     {

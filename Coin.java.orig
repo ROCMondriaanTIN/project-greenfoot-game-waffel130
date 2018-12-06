@@ -5,7 +5,11 @@ public class Coin extends Mover
     // Define the MAX variables, these variables doesn't change
     // (These are common variables you will use in your script)
     public int MAX_IMAGES = 5;
+<<<<<<< HEAD
     public int MAX_ANIMATION_SPEED = 6;
+=======
+    public int MAX_ANIMATION_SPEED = 4;
+>>>>>>> ffd33fa24ac527a91cc76f2297e8d2955632df1d
     
     // Define dynamic variables, these variables will change through your script.
     private int frame = 0;
@@ -32,4 +36,9 @@ public class Coin extends Mover
             }
         }
     }
+<<<<<<< HEAD
 }
+
+=======
+}
+>>>>>>> ffd33fa24ac527a91cc76f2297e8d2955632df1d
