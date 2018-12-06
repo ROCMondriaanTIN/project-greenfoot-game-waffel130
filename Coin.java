@@ -23,6 +23,12 @@ public class Coin extends Mover
     private void Animator () {
         setImage("coin_"+frame+".png");
         
+    }
+            animationSpeed = 0;
+            
+            frame++;
+            if (frame > MAX_IMAGES) {
+                frame = 0;
         if (animationSpeed > MAX_ANIMATION_SPEED) {
             animationSpeed = 0;
             
@@ -33,4 +39,3 @@ public class Coin extends Mover
         }
     }
 }
-
