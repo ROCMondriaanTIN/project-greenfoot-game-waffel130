@@ -36,15 +36,19 @@ public class Hero extends Mover {
     }
     public boolean onGround1()
     {
-     Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2 + 2, DeurOpSlot.class);
-       return under != null;
+        Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Tile tile1 = (Tile) underLeft;
+        Tile tile2 = (Tile) underRight;
+        
+        return (tile1 != null && tile1.isSolid) || (tile2 != null && tile2.isSolid);
     }
-    public boolean onGround()
+    /*public boolean onGround()
     {
         Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
         Tile tile = (Tile) under;
         return tile != null && tile.isSolid == true;
-    }
+    }*/
     public boolean touchingdDeurOpSlot()
     {
         if(keyBlue==true)
@@ -224,7 +228,7 @@ public class Hero extends Mover {
             }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("space") && onGround() == true) 
+        if (Greenfoot.isKeyDown("space") && onGround1() == true) 
         {
             velocityY = -10;
             setImage("p1_jump.png");
