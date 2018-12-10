@@ -10,7 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends World {
 
     private CollisionEngine ce;
-
+    
     /**
      * Constructor for objects of class Level1.
      *
@@ -19,9 +19,9 @@ public class Level1 extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1280, 720, 1, false);
         this.setBackground("bg.png");
-
+        
         int[][] map = {
-                {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -45,8 +45,9 @@ public class Level1 extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
+        Hero hero = new Hero(5, 0);
         Boef boef = new Boef();
+        Deur deur = new Deur();
 
          addObject(new Coin(),1279,433);
          addObject(new Coin(),1592,492);
@@ -57,6 +58,7 @@ public class Level1 extends World {
         addObject(camera, 0, 0);
         addObject(hero,100, 550);
         addObject(boef,170, 580);
+        addObject(deur, 1710, 565);
        /* addObject(new Enemy(), 330, 290);
         addObject(new Enemy(), 510, 290);
         addObject(new Enemy(), 690, 290);

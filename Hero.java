@@ -6,21 +6,30 @@ import greenfoot.*;
  */
 public class Hero extends Mover {
     private int frame = 1;
-    public int leven=3;
     boolean keyBlue=false;
     boolean DeurOpSlot=false;
     private final double gravity;
     private final double acc;
     private final double drag;
     private int animatieTimer = 0;
-    boolean isDood=false;
     
-  
+    boolean isDood = false;
+    int leven  = 0;
+    int startX = 0;
+    int startY = 0;
     
+    int coin = 0;
+    
+    Coins coins;
+    Levens levens;
 
-    public Hero() 
+    public Hero(int levens,int coins)
     {
         super();
+        
+        leven = levens;
+        coin = coins;
+        
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
@@ -61,7 +70,7 @@ public class Hero extends Mover {
             
         }
         return DeurOpSlot;
-    }    
+    }
     public void animatieRight()
     {
         if(frame == 1)
@@ -180,17 +189,47 @@ public class Hero extends Mover {
     }
 
     @Override
-    public void act() 
+    public void act()
     {
-       if(isDood)    
-            {isDood=false;
-            leven--;
+        if (CollisionEngine.DEBUG == false) {
+            handleInput();
+        }
+        
+        if (levens == null) {
+            levens = new Levens();
+            getWorld().addObject(levens, -10, -10);
             
-       }
-       if(CollisionEngine.DEBUG == false) {
-           
-        handleInput();
-    }
+            levens.setLevens(leven);
+        }
+        
+        if (coins == null) {
+            coins = new Coins();
+            getWorld().addObject(coins, -10, -10);
+            
+            coins.setCoins(coin);
+        }
+        
+        // Zet de spawn locatie van de player
+        if (startX == 0 && startY == 0) {
+            startX = getX();
+            startY = getY();
+        }
+        
+        // Als de speler dood gaat zet de speler terug op de spawn locatie en haal er een leven af.
+        // Als alle 3 de levens op zijn ga dan naar het gameover scherm.
+        if (isDood) {
+            if (leven == 1) {
+                Greenfoot.setWorld(new Gameover());
+            }
+            
+            leven--;
+            // Play death sound
+            
+            levens.removeLeven(leven);
+            
+            isDood = false;
+        }
+        
         checkObstacle();
         touchingdDeurOpSlot();
         getCoin();
@@ -202,6 +241,8 @@ public class Hero extends Mover {
             velocityY = gravity;
        }
         applyVelocity();
+        
+        checkDoorCollision();
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
@@ -209,20 +250,31 @@ public class Hero extends Mover {
                 break;
             }
         }
+        
         for (Actor liquidWater : getIntersectingObjects(TileExtended.class)) {
             TileExtended tile = (TileExtended) liquidWater;
             if (tile != null && tile.type == "water") {
-                Greenfoot.setWorld(new Level1());
+                // Zet eerst de player naar spawn locatie anders registreerd de code dat de player 2x
+                // in de lava is gevallen.
+                setLocation(startX, startY);
+                isDood = true;
                 break;
             }
         }
     }
-    int coin;
+    
+    public void checkDoorCollision() {
+        if (isTouching(Deur.class)) {
+            Greenfoot.setWorld(new Level2());
+        }
+    }
+    
     public int getCoin()
             {
                 if (isTouching(Coin.class)) {
                     removeTouching(Coin.class);
-                    coin ++;
+                    coin++;
+                    coins.updateCoins(coin);
                 }
                 return coin;
             }

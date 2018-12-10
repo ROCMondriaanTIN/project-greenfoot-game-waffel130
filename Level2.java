@@ -11,11 +11,15 @@ public class Level2 extends World {
 
     private CollisionEngine ce;
 
+    public int levens = 0;
+    public int coins = 0;
+
     /**
      * Constructor for objects of class Level2.
      *
      */
     public Level2() {
+        
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1280, 720, 1, false);
         this.setBackground("bg.png");
@@ -41,6 +45,7 @@ public class Level2 extends World {
 {-1,-1,-1,140,141,130,130,130,130,130,130,130,130,130,130,147,147,147,130,130,130,130,130,130,130,130,130,143,141,130,130,130,130,130,130,130,147,130,130,130,130,130,130,130,130,130,130,130,147,147},
 {-1,-1,140,141,130,130,130,130,130,130,147,147,147,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,147,147,147,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130},
 {-1,140,141,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130},
+{93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93,93},
 };
 
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
@@ -50,7 +55,7 @@ public class Level2 extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
+        Hero hero = new Hero(levens, coins);
         Boef boef = new Boef();
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
@@ -59,7 +64,7 @@ public class Level2 extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero,100, 910);
-        addObject(new Boef() ,190, 930);
+        addObject(boef ,190, 930);
        /* addObject(new Enemy(), 330, 290);
         addObject(new Enemy(), 510, 290);
         addObject(new Enemy(), 690, 290);
@@ -75,7 +80,7 @@ public class Level2 extends World {
         addObject(new Enemy(), 1650, 1005);
         addObject(new Enemy(), 1750, 1005);
         addObject(new Enemy(), 1850, 1005);
-        addObject(new DeurOpSlot(), 1050, 1120);
+        addObject(new DeurOpSlot(), 1050, 9320);
         addObject(new DeurOpSlot(), 1050, 980);
         addObject(new DeurOpSlot(), 1050, 1010);*/
 

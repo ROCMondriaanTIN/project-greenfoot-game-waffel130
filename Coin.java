@@ -16,7 +16,7 @@ public class Coin extends Mover
     {
         animationSpeed++;
         Animator();
-        applyVelocity();
+        //applyVelocity();
     }
 
     // Animate the coin
