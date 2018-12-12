@@ -82,13 +82,9 @@ public class TestWorld extends World {
     private void prepare()
     {
 
-        KeyBlue keyBlue = new KeyBlue();
-        addObject(keyBlue,530,369);
 
         Deur deur = new Deur();
         addObject(deur,922,444);
 
-        DeurOpSlot deurOpSlot = new DeurOpSlot();
-        addObject(deurOpSlot,460,436);
     }
 }

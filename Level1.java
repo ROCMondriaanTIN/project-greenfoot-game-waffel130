@@ -59,25 +59,6 @@ public class Level1 extends World {
         addObject(hero,100, 550);
         addObject(boef,170, 580);
         addObject(deur, 1710, 565);
-       /* addObject(new Enemy(), 330, 290);
-        addObject(new Enemy(), 510, 290);
-        addObject(new Enemy(), 690, 290);
-        addObject(new Enemy(), 870, 290);
-        addObject(new Enemy(), 1050, 290);
-        addObject(new Enemy(), 1230, 290);
-        addObject(new Enemy(), 1410, 290);
-        addObject(new Enemy(), 1590, 290);
-        addObject(new Enemy(), 1770, 290);
-        addObject(new Enemy(), 1950, 290);
-        addObject(new Enemy(), 2130, 290);
-        addObject(new Enemy(), 1550, 1005);
-        addObject(new Enemy(), 1650, 1005);
-        addObject(new Enemy(), 1750, 1005);
-        addObject(new Enemy(), 1850, 1005);
-        addObject(new DeurOpSlot(), 1050, 1120);
-        addObject(new DeurOpSlot(), 1050, 980);
-        addObject(new DeurOpSlot(), 1050, 1010);*/
-
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);

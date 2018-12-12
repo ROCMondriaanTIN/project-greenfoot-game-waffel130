@@ -35,14 +35,7 @@ public class Hero extends Mover {
         drag = 0.8;
         setImage("p1_walk00.png");
     }
-    public void checkObstacle()
-    {
-        Actor wall = getOneIntersectingObject(DeurOpSlot.class);
-        if(wall != null)
-        {
-            move (-4);
-        }   
-    }
+
     public boolean onGround1()
     {
         Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
@@ -52,25 +45,7 @@ public class Hero extends Mover {
         
         return (tile1 != null && tile1.isSolid) || (tile2 != null && tile2.isSolid);
     }
-    /*public boolean onGround()
-    {
-        Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
-        Tile tile = (Tile) under;
-        return tile != null && tile.isSolid == true;
-    }*/
-    public boolean touchingdDeurOpSlot()
-    {
-        if(keyBlue==true)
-        {
-            if(isTouching(DeurOpSlot.class)) 
-            {
-                removeTouching(DeurOpSlot.class);
-                 DeurOpSlot=true;
-            }
-            
-        }
-        return DeurOpSlot;
-    }
+
     public void animatieRight()
     {
         if(frame == 1)
@@ -223,27 +198,23 @@ public class Hero extends Mover {
             }
             
             leven--;
-            // Play death sound
+            
+            
             
             levens.removeLeven(leven);
             
             isDood = false;
         }
         
-        checkObstacle();
-        touchingdDeurOpSlot();
         getCoin();
-       // onGround1();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) 
            {
             velocityY = gravity;
-       }
+        }
         applyVelocity();
-        
         checkDoorCollision();
-
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
@@ -286,7 +257,7 @@ public class Hero extends Mover {
             setImage("p1_jump.png");
              
         } else setImage ("p1_walk00.png");
-
+        
         if (Greenfoot.isKeyDown("left")) 
         {
             velocityX = -5;
@@ -294,14 +265,9 @@ public class Hero extends Mover {
         } else if (Greenfoot.isKeyDown("right")) 
         {
             velocityX = 5;
-            //if (animatieTimer % 3 == 0) 
-            //{
-                animatieRight();
-            //}
-             //   animatieTimer ++;
+            animatieRight();
         }
         if (Greenfoot.isKeyDown("down")){
-            
             velocityY = 2 ;
             setImage("p1_duck.png");
         }
